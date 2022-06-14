@@ -20,7 +20,7 @@
         <repository>
           <id>github</id>
           <name>GitHub shiyamsundark Apache Maven Packages</name>
-          <url>https://maven.pkg.github.com/shiyamsundark/hello-world-mule-lab</url>
+          <url>https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
