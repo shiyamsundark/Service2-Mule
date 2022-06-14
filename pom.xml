@@ -16,7 +16,7 @@
 		        <app.runtime>4.4.0-20220420</app.runtime>
 		        <mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
     
-            <sonar.host.url>https://sonarcloud.io:443</sonar.host.url>
+            		<sonar.host.url>https://sonarcloud.io:443</sonar.host.url>
 		        <sonar.login>shiyamsundark</sonar.login>
     
 	      </properties>
@@ -46,16 +46,18 @@
                     <extensions>true</extensions>
                     <configuration>
                     <cloudHubDeployment>
+			    
                         <uri>https://anypoint.mulesoft.com</uri>
-                        <muleVersion>4.3.0</muleVersion>
+                        <muleVersion>4.4.0</muleVersion>
                         <username>${anypoint.username}</username>
                         <password>${anypoint.password}</password>
-                        <applicationName>demo-muleappv1</applicationName>
+                        <applicationName>DIY-06-1-Customer-Service-Accounts</applicationName>
                         <environment>Sandbox</environment>
                         <workerType>MICRO</workerType>
                         <region>us-east-2</region>
                         <workers>1</workers>
                         <objectStoreV2>true</objectStoreV2>
+			    
                     </cloudHubDeployment>
                     </configuration>
 			          </plugin>
