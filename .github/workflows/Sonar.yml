@@ -31,5 +31,5 @@ jobs:
             restore-keys: ${{ runner.os }}-sonar
             
         - name: Sonar Analysis
-          run: mvn -B verify sonar:sonar -Dsonar.projectKey=shiyamsundark_hello-world-mule-lab -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+          run: mvn -B verify sonar:sonar -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
