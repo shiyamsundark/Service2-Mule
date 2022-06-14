@@ -3,11 +3,11 @@
 	      <modelVersion>4.0.0</modelVersion>
   
         <groupId>com.mycompany</groupId>
-	      <artifactId>DIY-06-1-Customer-Service-Accounts</artifactId>
-	      <version>1.0.0-SNAPSHOT</version>
+	      <artifactId>DIY-06-1-Customer-Service-Accountsv1</artifactId>
+	      <version>1.0.1-SNAPSHOT</version>
 	      <packaging>mule-application</packaging>
 
-	      <name>diy-06-1-customer-service-accounts</name>
+	      <name>diy-06-1-customer-service-accountsv1</name>
   
         <properties>
 		        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -51,7 +51,7 @@
                         <muleVersion>4.4.0</muleVersion>
                         <username>${anypoint.username}</username>
                         <password>${anypoint.password}</password>
-                        <applicationName>DIY-06-1-Customer-Service-Accounts</applicationName>
+                        <applicationName>DIY-06-1-Customer-Service-Accountsv1</applicationName>
                         <environment>Sandbox</environment>
                         <workerType>MICRO</workerType>
                         <region>us-east-2</region>
