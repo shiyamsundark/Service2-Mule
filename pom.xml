@@ -4,7 +4,7 @@
   
         <groupId>com.mycompany</groupId>
 	      <artifactId>diy-06-1-customer-service-accountsv1</artifactId>
-	      <version>1.0.4</version>
+	      <version>1.0.6</version>
 	      <packaging>mule-application</packaging>
 
 	      <name>diy-06-1-customer-service-accountsv1</name>
@@ -51,7 +51,7 @@
 						<muleVersion>4.4.0</muleVersion>
 						<username>${anypoint.username}</username>
 						<password>${anypoint.password}</password>
-						<applicationName>DIY-06-1-Customer-Service-Accountsv1</applicationName>
+						<applicationName>diy-06-1-customer-service-accountsv1</applicationName>
 						<environment>Sandbox</environment>
 						<workerType>MICRO</workerType>
 						<region>us-east-2</region>
