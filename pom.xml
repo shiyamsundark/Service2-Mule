@@ -3,8 +3,8 @@
 	      <modelVersion>4.0.0</modelVersion>
   
         <groupId>com.mycompany</groupId>
-	      <artifactId>DIY-06-1-Customer-Service-Accountsv1</artifactId>
-	      <version>1.0.1-SNAPSHOT</version>
+	      <artifactId>diy-06-1-customer-service-accountsv1</artifactId>
+	      <version>1.0.3</version>
 	      <packaging>mule-application</packaging>
 
 	      <name>diy-06-1-customer-service-accountsv1</name>
@@ -19,52 +19,52 @@
             		<sonar.host.url>https://sonarcloud.io:443</sonar.host.url>
 		        <sonar.login>shiyamsundark</sonar.login>
     
-	      </properties>
+	</properties>
   
         <build>
-		        <plugins>
+		<plugins>
 			
-			          <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.2</version>
-                    <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
-                    </configuration>
-		            </plugin>
+			   <plugin>
+				    <artifactId>maven-compiler-plugin</artifactId>
+				    <version>3.2</version>
+				    <configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				    </configuration>
+		           </plugin>
           
-			          <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.0.0</version>
-			          </plugin>
+			   <plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-clean-plugin</artifactId>
+				    <version>3.0.0</version>
+			   </plugin>
           
-			          <plugin>
-                    <groupId>org.mule.tools.maven</groupId>
-                    <artifactId>mule-maven-plugin</artifactId>
-                    <version>${mule.maven.plugin.version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                    <cloudHubDeployment>
+			   <plugin>
+				    <groupId>org.mule.tools.maven</groupId>
+				    <artifactId>mule-maven-plugin</artifactId>
+				    <version>${mule.maven.plugin.version}</version>
+				    <extensions>true</extensions>
+				    <configuration>
+				    <cloudHubDeployment>
 			    
-                        <uri>https://anypoint.mulesoft.com</uri>
-                        <muleVersion>4.4.0</muleVersion>
-                        <username>${anypoint.username}</username>
-                        <password>${anypoint.password}</password>
-                        <applicationName>DIY-06-1-Customer-Service-Accountsv1</applicationName>
-                        <environment>Sandbox</environment>
-                        <workerType>MICRO</workerType>
-                        <region>us-east-2</region>
-                        <workers>1</workers>
-                        <objectStoreV2>true</objectStoreV2>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
+						<applicationName>DIY-06-1-Customer-Service-Accountsv1</applicationName>
+						<environment>Sandbox</environment>
+						<workerType>MICRO</workerType>
+						<region>us-east-2</region>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
 			    
-                    </cloudHubDeployment>
-                    </configuration>
-			          </plugin>
+                    		    </cloudHubDeployment>
+                    		    </configuration>
+			   </plugin>
               
-		        </plugins>
+		</plugins>
           
-	      </build>
+	</build>
 
         <dependencies>
           
@@ -86,41 +86,41 @@
 
         <repositories>
           
-          <repository>
-            <id>anypoint-exchange-v2</id>
-            <name>Anypoint Exchange</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
-            <layout>default</layout>
-          </repository>
+		  <repository>
+		    <id>anypoint-exchange-v2</id>
+		    <name>Anypoint Exchange</name>
+		    <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+		    <layout>default</layout>
+		  </repository>
           
-          <repository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases Repository</name>
-            <url>https://repository.mulesoft.org/releases/</url>
-            <layout>default</layout>
-          </repository>
+		  <repository>
+		    <id>mulesoft-releases</id>
+		    <name>MuleSoft Releases Repository</name>
+		    <url>https://repository.mulesoft.org/releases/</url>
+		    <layout>default</layout>
+		  </repository>
         </repositories>
 
         <pluginRepositories>
           
-          <pluginRepository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases Repository</name>
-            <layout>default</layout>
-            <url>https://repository.mulesoft.org/releases/</url>
-            <snapshots>
-              <enabled>false</enabled>
-            </snapshots>
-          </pluginRepository>
+		  <pluginRepository>
+		    <id>mulesoft-releases</id>
+		    <name>MuleSoft Releases Repository</name>
+		    <layout>default</layout>
+		    <url>https://repository.mulesoft.org/releases/</url>
+		    <snapshots>
+		      <enabled>false</enabled>
+		    </snapshots>
+		  </pluginRepository>
           
         </pluginRepositories>
 	
         <distributionManagement>
    	        <repository>
-     	            <id>github</id>
-                  <name>GitHub shiyamsundark Apache Maven Packages</name>
-                  <url>https://maven.pkg.github.com/shiyamsundark/hello-world-mule-lab</url>
-            </repository>
-	      </distributionManagement>
+			  <id>github</id>
+			  <name>GitHub shiyamsundark Apache Maven Packages</name>
+			  <url>https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts</url>
+            	</repository>
+	</distributionManagement>
 	
 </project>
