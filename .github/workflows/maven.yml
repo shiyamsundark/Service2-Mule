@@ -50,7 +50,7 @@ jobs:
                      
   Sonar:
   
-    needs: [Build]
+    needs: [Build,Pre-Release]
     runs-on: ubuntu-latest
     steps:   
       - uses: actions/checkout@v2
@@ -59,7 +59,7 @@ jobs:
         
   Deploy:
   
-    needs: [Build,Sonar]
+    needs: [Build,Sonar,Pre-Release]
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
