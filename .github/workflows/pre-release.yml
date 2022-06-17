@@ -11,8 +11,9 @@ on:
         description: "The version"
         value: ${{ jobs.Pre-Release.outputs.versn }}    
 env:
-           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
 jobs:
   Pre-Release:
     
@@ -25,7 +26,7 @@ jobs:
       - id: versnid
         run: |
           echo setting release version!!
-          aws s3 cp s3://instidbucket1/version1/versionnew.cfg ${{ github.workspace }}/versions.cfg --region us-east-2  
+          aws s3 cp s3://instidbucketv1/versionv1/versionnew.cfg ${{ github.workspace }}/versions.cfg --region us-west-2  
           echo "${{ github.run_number }}" >> versions.cfg
           newversion=$(cat versions.cfg)
           echo $newversion
