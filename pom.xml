@@ -5,7 +5,7 @@
               <groupId>com.mycompany</groupId>
 	      <artifactId>diy-06-1-customer-service-accountsv1</artifactId>
 	      <version>${snapshot.version}</version>
-	      <packaging>mule-application</packaging>
+	      <packaging>war</packaging>
 	      <name>diy-06-1-customer-service-accountsv1</name>
 	      <url>https://github.com/shiyamsundark/</url>
 	       
