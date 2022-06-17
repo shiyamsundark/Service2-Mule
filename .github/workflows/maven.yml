@@ -24,25 +24,25 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
  
 
-#   Build:
+  Build:
 
-#        needs: [Pre-Release]
-#        runs-on: ubuntu-latest
-#        permissions:
-#         contents: read
-#         packages: write
-#        steps:
-#           - uses: actions/checkout@v2
-#           - name: Set up JDK 11
-#             uses: actions/setup-java@v3
-#             with:
-#               java-version: '11'
-#               distribution: 'temurin'
-#               server-id: github 
-#               settings-path: ${{ github.workspace }} 
+       needs: [Pre-Release]
+       runs-on: ubuntu-latest
+       permissions:
+        contents: read
+        packages: write
+       steps:
+          - uses: actions/checkout@v2
+          - name: Set up JDK 11
+            uses: actions/setup-java@v3
+            with:
+              java-version: '11'
+              distribution: 'temurin'
+              server-id: github 
+              settings-path: ${{ github.workspace }} 
               
-#           - name: Build with Maven
-#             run: mvn -B package --file pom.xml
+          - name: Build with Maven
+            run: mvn -B package --file pom.xml
 
 #           - name: Publish to GitHub Packages Apache Maven
 #             run: mvn deploy -Dsnapshot.version=${{needs.Pre-Release.outputs.currentversion}} -s $GITHUB_WORKSPACE/settings.xml
