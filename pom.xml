@@ -3,10 +3,10 @@
 	      <modelVersion>4.0.0</modelVersion>
   
               <groupId>com.mycompany</groupId>
-	      <artifactId>diy-06-1-customer-service-accountsv1</artifactId>
+	      <artifactId>customer-service-accountsv1</artifactId>
 	      <version>${newVersion}</version>
 	      <packaging>mule-application</packaging>
-	      <name>diy-06-1-customer-service-accountsv1</name>
+	      <name>customer-service-accountsv1</name>
 	      <url>https://github.com/shiyamsundark/</url>
 	       
   
@@ -52,7 +52,7 @@
 						<muleVersion>4.4.0</muleVersion>
 						<username>${anypoint.username}</username>
 						<password>${anypoint.password}</password>
-						<applicationName>diy-06-1-customer-service-accountsv1</applicationName>
+						<applicationName>customer-service-accountsv1</applicationName>
 						<environment>Sandbox</environment>
 						<workerType>MICRO</workerType>
 						<region>us-east-2</region>
