@@ -38,14 +38,12 @@ jobs:
               server-id: github 
               settings-path: ${{ github.workspace }} 
           - name: Build with Maven
-            run: 
-             mvn versions:set -DnewVersion=${needs.Pre-Release.outputs.currentversion}
-             mvn -B package --file pom.xml 
+            run: mvn -B package --file pom.xml 
 
-          - name: Publish to GitHub Packages Apache Maven
-            run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-            env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           - name: Publish to GitHub Packages Apache Maven
+#             run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+#             env:
+#              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
                      
 #   Sonar:
