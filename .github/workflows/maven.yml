@@ -72,6 +72,7 @@ jobs:
           run: |
       
            mvn deploy -DmuleDeploy \
+           -DnewVersion=${{needs.Pre-Release.outputs.currentversion}}
            -Dmule.artifact=$artifactName \
            -Danypoint.username="$USERNAME" \
            -Danypoint.password="$PASSWORD" \
