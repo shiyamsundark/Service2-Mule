@@ -37,9 +37,9 @@ jobs:
               distribution: 'temurin'
               server-id: github 
               settings-path: ${{ github.workspace }} 
+              
           - name: Build with Maven
-            run: |
-                 mvn versions:set -DnewVersion=${{needs.Pre-Release.outputs.currentversion}}
+            run: mvn versions:set -DnewVersion=${{needs.Pre-Release.outputs.currentversion}}
                
           - name: Publish to GitHub Packages Apache Maven
             run: mvn deploy -DnewVersion=${{needs.Pre-Release.outputs.currentversion}} -s $GITHUB_WORKSPACE/settings.xml
@@ -47,32 +47,32 @@ jobs:
              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
                      
-#   Sonar:
+  Sonar:
   
-#     needs: [Build]
-#     runs-on: ubuntu-latest
-#     steps:   
-#       - uses: actions/checkout@v2
-#       - name: Sonar Analysis
-#         run: mvn -B verify sonar:sonar -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+    needs: [Build,Pre-Release]
+    runs-on: ubuntu-latest
+    steps:   
+      - uses: actions/checkout@v2
+      - name: Sonar Analysis
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
         
-#   Deploy:
+  Deploy:
   
-#     needs: [Build,Sonar]
-#     runs-on: ubuntu-latest
-#     steps:
-#         - uses: actions/checkout@v3
-#         - uses: actions/setup-java@v3
-#           with:
-#               java-version: '11'
-#               distribution: 'adopt'
+    needs: [Build,Sonar,Pre-Release]
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-java@v3
+          with:
+              java-version: '11'
+              distribution: 'adopt'
               
-#         - name: Deploy to Sandbox
+        - name: Deploy to Sandbox
         
-#           run: |
+          run: |
       
-#            mvn deploy -DmuleDeploy \
-#            -Dmule.artifact=$artifactName \
-#            -Danypoint.username="$USERNAME" \
-#            -Danypoint.password="$PASSWORD" \
-#            -DskipTests
+           mvn deploy -DmuleDeploy \
+           -Dmule.artifact=$artifactName \
+           -Danypoint.username="$USERNAME" \
+           -Danypoint.password="$PASSWORD" \
+           -DskipTests
