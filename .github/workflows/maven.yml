@@ -54,7 +54,7 @@ jobs:
     steps:   
       - uses: actions/checkout@v2
       - name: Sonar Analysis
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+        run: mvn -B verify sonar:sonar -DnewVersion=${{needs.Pre-Release.outputs.currentversion}} -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
         
   Deploy:
   
