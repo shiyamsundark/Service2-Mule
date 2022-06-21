@@ -14,9 +14,14 @@ on:
         description: REL_Version
         required: true
         
+env:
+        
+    USERNAME: ${{ secrets.USERNAME }}
+    PASSWORD: ${{ secrets.PASSWORD }}
+     
 jobs:
       
-   Deploy to Mule:
+   DeploytoMule:
   
     runs-on: ubuntu-latest
     steps:
