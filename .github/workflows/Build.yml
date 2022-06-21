@@ -1,4 +1,4 @@
-name: Mulesoft Build
+name: MulesoftBuild
 
 on: 
   workflow_dispatch:
