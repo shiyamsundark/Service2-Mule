@@ -1,4 +1,4 @@
-name: Mule Deploy
+name: Mulesoft - Deploy
 
 on:
   workflow_dispatch:
