@@ -12,7 +12,11 @@ on:
       version:
         description: REL_Version
         required: true
-        
+
+env:
+    
+    USERNAME: ${{ secrets.USERNAME }}
+    PASSWORD: ${{ secrets.PASSWORD }}
     
 jobs:
       
