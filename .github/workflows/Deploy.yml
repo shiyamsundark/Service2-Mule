@@ -8,7 +8,6 @@ on:
         description: environment
         options:
         - Sandbox
-        - Sandbox1
         required: true
       version:
         description: REL_Version
@@ -37,11 +36,8 @@ jobs:
            mvn deploy -DmuleDeploy \
            -DnewVersion=${{github.event.inputs.version}} \
            -Dmule.artifact=$artifactName \
-           -Dmule.environment=${{ github.event.inputs.MuleEnvironment }} \
            -Danypoint.username="$USERNAME" \
            -Danypoint.password="$PASSWORD" \
            -DskipTests
          
-          env:
-            USERNAME: ${{ secrets.USERNAME }}
-            PASSWORD: ${{ secrets.PASSWORD }}
+          
