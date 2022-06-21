@@ -14,11 +14,7 @@ on:
         description: REL_Version
         required: true
         
-env:
-        
-    USERNAME: ${{ secrets.USERNAME }}
-    PASSWORD: ${{ secrets.PASSWORD }}
-     
+    
 jobs:
       
    DeploytoMule:
@@ -45,3 +41,7 @@ jobs:
            -Danypoint.username="$USERNAME" \
            -Danypoint.password="$PASSWORD" \
            -DskipTests
+         
+          env:
+            USERNAME: ${{ secrets.USERNAME }}
+            PASSWORD: ${{ secrets.PASSWORD }}
