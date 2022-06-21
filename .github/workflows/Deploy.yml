@@ -39,7 +39,7 @@ jobs:
           run: |
       
            mvn deploy -DmuleDeploy \
-           -DnewVersion=${{needs.Pre-Release.outputs.currentversion}} \
+           -DnewVersion=${{github.event.inputs.version}} \
            -Dmule.artifact=$artifactName \
            -Dmule.environment=${{ github.event.inputs.MuleEnvironment }} \
            -Danypoint.username="$USERNAME" \
