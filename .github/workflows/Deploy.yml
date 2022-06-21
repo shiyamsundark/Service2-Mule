@@ -13,10 +13,10 @@ on:
         description: REL_Version
         required: true
 
-env:
+# env:
     
-    USERNAME: ${{ secrets.USERNAME }}
-    PASSWORD: ${{ secrets.PASSWORD }}
+#     USERNAME: ${{ secrets.USERNAME }}
+#     PASSWORD: ${{ secrets.PASSWORD }}
     
 jobs:
       
@@ -35,13 +35,6 @@ jobs:
               
         - name: Deploy to Sandbox
         
-          run: |
-      
-           mvn deploy -DmuleDeploy \
-           -DnewVersion=${{github.event.inputs.version}} \
-           -Dmule.artifact=$artifactName \
-           -Danypoint.username="$USERNAME" \
-           -Danypoint.password="$PASSWORD" \
-           -DskipTests
+          run: mvn package deploy -DmuleDeploy -Dusername= ${{ secrets.USERNAME }} -Dpassword= ${{ secrets.PASSWORD }} -Dworkers=1 -Dworker.type=Micro -Denvironment= ${{ github.event.inputs.MuleEnvironment }} -Dmule.version=4.4.0
          
           
