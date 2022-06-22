@@ -37,8 +37,9 @@ jobs:
         - name: Downloading the Artifact
           run: wget https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
           env:
-            Username: shiyamsundark
-            Password: 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
+            Username: ${{ secrets.GHUBUSERNAME }}
+            Password: ${{ secrets.GHUBACCESSPW }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
 #         - name: Deploying the Artifact to Mule
 #           run: mvn deploy -DmuleDeploy 
