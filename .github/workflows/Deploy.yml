@@ -34,13 +34,14 @@ jobs:
         - name: Version Number
           run: echo "REL_VERSION = ${{ github.event.inputs.version }}"
               
-        - name: Deploy to Sandbox
+        - name: Downloading the Artifact
+          run: wget https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
+          env:
+            username: shiyamsundark
+            password: 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
         
-          run: |
-          
-             wget https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
-            
-             mvn deploy -DmuleDeploy 
+#         - name: Deploying the Artifact to Mule
+#           run: mvn deploy -DmuleDeploy 
           
 #           mvn package deploy -DmuleDeploy -Dusername= ${{ secrets.USERNAME }} -Dpassword= ${{ secrets.PASSWORD }} -Dworkers=1 -Dworker.type=Micro  -Dmule.version=4.4.0
          
