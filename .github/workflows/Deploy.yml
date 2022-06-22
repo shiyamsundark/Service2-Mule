@@ -38,8 +38,8 @@ jobs:
         - name: Downloading the Artifact
           run: wget https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
           env:
-#             Username: ${{ secrets.GHUBUSERNAME }}
-#             Password: ${{ secrets.GHUBACCESSPW }}
+            Username: shiyamsundark
+            Password: Shiyam@5796
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
         
