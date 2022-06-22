@@ -18,6 +18,9 @@ env:
     
     USERNAME: ${{ secrets.USERNAME }}
     PASSWORD: ${{ secrets.PASSWORD }}
+    Username: ${{ secrets.GHUBUSERNAME }}
+    Password: ${{ secrets.GHUBACCESSPW }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
 jobs:
       
@@ -40,6 +43,7 @@ jobs:
             Username: ${{ secrets.GHUBUSERNAME }}
             Password: ${{ secrets.GHUBACCESSPW }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
         
 #         - name: Deploying the Artifact to Mule
 #           run: mvn deploy -DmuleDeploy 
