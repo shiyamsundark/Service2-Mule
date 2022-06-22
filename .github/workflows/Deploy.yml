@@ -39,7 +39,7 @@ jobs:
           run: wget https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
           env:
             Username: shiyamsundark
-            Password: Shiyam@5796
+            Password: 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
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
         
