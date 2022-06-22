@@ -6,10 +6,6 @@ on:
       MuleEnvironment:
         type: environment
         description: environment
-        options:
-        - Sandbox
-        - prod
-        - nprd
         required: true
       version:
         description: REL_Version
