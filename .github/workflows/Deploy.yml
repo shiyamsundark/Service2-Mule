@@ -8,6 +8,8 @@ on:
         description: environment
         options:
         - Sandbox
+        - prod
+        - nprd
         required: true
       version:
         description: REL_Version
