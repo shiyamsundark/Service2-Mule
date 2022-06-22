@@ -7,6 +7,9 @@ on:
         type: environment
         description: environment
         required: true
+        options:
+        - Sandbox
+        
       version:
         description: REL_Version
         required: true
