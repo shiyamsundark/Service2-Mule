@@ -18,8 +18,6 @@ env:
     
     USERNAME: ${{ secrets.USERNAME }}
     PASSWORD: ${{ secrets.PASSWORD }}
-    Username: ${{ secrets.GHUBUSERNAME }}
-    Password: ${{ secrets.GHUBACCESSPW }}
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
 jobs:
