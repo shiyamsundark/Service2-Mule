@@ -50,13 +50,13 @@
 			    
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
+						<username>${username}</username>
+						<password>${password}</password>
 						<applicationName>customer-service-accountsv1</applicationName>
-						<environment>Sandbox</environment>
-						<workerType>MICRO</workerType>
+						<environment>${environment}</environment>
+						<workerType>${worker.type}</workerType>
 						<region>us-east-2</region>
-						<workers>1</workers>
+						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
 			    
                     		    </cloudHubDeployment>
