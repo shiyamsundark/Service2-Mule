@@ -36,7 +36,7 @@ jobs:
           run: echo "REL_VERSION = ${{ github.event.inputs.version }}"
               
         - name: Downloading the Artifact
-          run: wget --user=shiyamsundark --password= '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' https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
+          run: wget --user=shiyamsundark --password= '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' https://maven.pkg.github.com/shiyamsundark/Customer-service-accounts/com/mycompany/customer-service-accountsv1/${{ github.event.inputs.version }}/customer-service-accountsv1-${{ github.event.inputs.version }}-mule-application.jar 
         
             
         
