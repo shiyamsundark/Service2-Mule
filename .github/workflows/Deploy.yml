@@ -40,9 +40,9 @@ jobs:
            mvn deploy -DmuleDeploy \
            -DnewVersion=${{github.event.inputs.version}} \
            -Dmule.artifact=$artifactName \
-           -Dusername="$USERNAME" \
-           -Dpassword="$PASSWORD" \
-           -Denvironment= " ${{github.event.inputs.MuleEnvironment}} "
+           -Dusername=$USERNAME \
+           -Dpassword=$PASSWORD \
+           -Denvironment=${{github.event.inputs.MuleEnvironment}} \
            -Dworkers=1 \
            -Dworker.type=Micro \
            -DskipTests
