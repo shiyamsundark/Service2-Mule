@@ -35,7 +35,7 @@
     <server>
       <id>github</id>
       <username>shiyamsundark</username>
-      <password>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</password>
+      <password>${{ secrets.ACCESSTOKEN }}</password>
     </server>
 
   </servers>
