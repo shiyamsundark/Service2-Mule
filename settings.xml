@@ -15,6 +15,12 @@
         <repository>
           <id>central</id>
           <url>https://repo1.maven.org/maven2</url>
+          <releases>
+                <enabled>true</enabled>
+          </releases>
+          <snapshots>
+                <enabled>true</enabled>
+          </snapshots>
         </repository>
         
         <repository>
@@ -35,7 +41,7 @@
     <server>
       <id>github</id>
       <username>shiyamsundark</username>
-      <password>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</password>
+      <password>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</password>
     </server>
 
   </servers>
