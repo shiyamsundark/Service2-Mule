@@ -40,8 +40,15 @@ jobs:
            mvn deploy -DmuleDeploy \
            -DnewVersion=${{github.event.inputs.version}} \
            -Dmule.artifact=$artifactName \
-           -Danypoint.username="$USERNAME" \
-           -Danypoint.password="$PASSWORD" \
+           -Dusername="$USERNAME" \
+           -Dpassword="$PASSWORD" \
+           -Denvironment= " ${{github.event.inputs.MuleEnvironment}} "
+           -Dworkers=1 \
+           -Dworker.type=Micro \
            -DskipTests
-         
+           
+           
+           
+           
+           
           
