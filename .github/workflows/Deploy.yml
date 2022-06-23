@@ -47,7 +47,6 @@ jobs:
         - name: Deploying the Artifact to Mule
           run: mvn deploy -DmuleDeploy\
              -DnewVersion= ${{github.event.inputs.version}} \
-             -Danypoint.env= "${{ github.event.inputs.MuleEnvironment }}"\
              -Dmule.artifact=$artifactName \
              -Danypoint.username="$USERNAME" \
              -Danypoint.password="$PASSWORD" \
