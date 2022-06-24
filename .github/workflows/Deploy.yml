@@ -33,7 +33,7 @@ jobs:
         - name: Version Number
           run: echo "REL_VERSION = ${{ github.event.inputs.version }}"
               
-        - name: Deploy to Sandbox
+        - name: Deploy to Sandbo
         
           run: |
       
