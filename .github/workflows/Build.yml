@@ -4,43 +4,35 @@ on:
   workflow_dispatch:
 
 env:
-    
-    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
              
 jobs:
 
-  Pre-Release:
-  
-    name: Versioning 
-    uses: ./.github/workflows/pre-release.yml
-    secrets:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
+  Pre-Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Versioning 
+        run: |
+            echo setting release version!!
+            Version="23.03.01.${{ github.run_number }}"
+            echo $Version
+            
   Build:
 
-       needs: [Pre-Release]
+       needs: [Pre-Build]
        runs-on: ubuntu-latest
        steps:
           - uses: actions/checkout@v2
+          
           - name: Build with Maven
             run: mvn versions:set -DnewVersion=${{needs.Pre-Release.outputs.currentversion}}
             
-  Sonar:
-  
-    needs: [Build,Pre-Release]
-    runs-on: ubuntu-latest
-    steps:   
-      - uses: actions/checkout@v2
-      - name: Sonar Analysis
-        run: mvn -B verify sonar:sonar -DnewVersion=${{needs.Pre-Release.outputs.currentversion}} -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
-                         
+          - name: Sonar Analysis
+            run: mvn -B verify sonar:sonar -DnewVersion=${{needs.Pre-Release.outputs.currentversion}} -Dsonar.projectKey=shiyamsundark_Customer-service-accounts -Dsonar.organization=shiyamsundark -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+                             
                      
   Publish:
-  
-        needs: [Build,Pre-Release,Sonar]
+        needs: [Build,Pre-Build]
         runs-on: ubuntu-latest
         
         permissions:
@@ -50,6 +42,7 @@ jobs:
         steps:
         
           - uses: actions/checkout@v2 
+          
           - uses: actions/setup-java@v3
             with:
               java-version: '11'
