@@ -1,0 +1,37 @@
+name: Mule Build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+  actions: read
+  id-token: write
+  
+jobs:
+
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build
+      run: |
+           echo "dotnet build-test"
+      
+    - name: sonar
+      run: |
+           echo Sonar
+  Fortify:
+    runs-on: ubuntu-latest
+    needs: [Build]
+    steps:
+    - name: Fortify
+      run: |
+           echo "Fortify-test"
+    
+     
+  Upload_Artifact_GitHub_Release:         
+       runs-on: ubuntu-latest
+       needs: [Build,Fortify]  
+       steps:
+         - run: echo test
