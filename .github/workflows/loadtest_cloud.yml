@@ -1,4 +1,4 @@
-name: Loadtest_K6
+name: Loadtest_K6_Cloud
 on: 
   workflow_dispatch:
 
