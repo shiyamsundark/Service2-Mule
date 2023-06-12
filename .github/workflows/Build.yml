@@ -1,0 +1,7 @@
+name:  Mule_Service2_Build
+on:
+  workflow_dispatch:
+jobs: 
+  Build-Validation:
+     name: mule-Build
+     uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build.yml@main
