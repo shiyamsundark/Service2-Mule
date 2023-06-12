@@ -1,0 +1,19 @@
+name: Loadtest_K6
+on: 
+  workflow_dispatch:
+
+jobs:
+  k6_load_test:
+    name: k6 Load Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run local k6 test
+        uses: grafana/k6-action@v0.2.0
+        with:
+          filename: ./test.js
+          cloud: true
+          token: ${{ secrets.K6_CLOUD_API_TOKEN }}
