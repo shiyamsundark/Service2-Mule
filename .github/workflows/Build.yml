@@ -5,3 +5,5 @@ jobs:
   Build-Validation:
      name: mule-Build
      uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build.yml@main
+     with:
+       Repository: ${{ github.repository }}
