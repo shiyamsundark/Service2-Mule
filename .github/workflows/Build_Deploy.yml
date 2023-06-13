@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3 
       
-      - name: PR_Check_Status
+      - name: PR_Check
         id: pr_merge
         run: | 
               pr_checkbox=$(cat $GITHUB_EVENT_PATH | jq -r '.pull_request.body')
