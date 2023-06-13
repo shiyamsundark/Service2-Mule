@@ -1,4 +1,4 @@
-name:  Mule_Service2_Build
+name:  Mule_Service2_Build_Deploy
 on:
   workflow_dispatch:
 permissions:
