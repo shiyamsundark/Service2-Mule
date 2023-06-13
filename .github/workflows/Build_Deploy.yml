@@ -36,8 +36,7 @@ jobs:
                 echo "Automated Build and Deploy have been marked"
                 Build_Deploy_PR="true"
                 echo "Build_Deploy_PR=$Build_Deploy_PR" >> $GITHUB_OUTPUT
-              fi
-      
+              fi 
 
       - name: PR_Check-WD
         if: ${{ github.event_name == 'workflow_dispatch' }}
