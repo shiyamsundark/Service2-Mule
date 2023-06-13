@@ -2,8 +2,8 @@ name:  Mule_Service2_Build
 on:
   workflow_dispatch:
 jobs: 
-  Build-Validation:
-     name: mule-Build
+  Service2_Build:
+     name: Mule-Build
      uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build.yml@main
      with:
        Repository: ${{ github.repository }}
