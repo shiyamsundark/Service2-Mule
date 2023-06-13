@@ -9,10 +9,8 @@ permissions:
     contents: write
     packages: write
     actions: write
-    id-token: write
-    
+    id-token: write    
 run-name: Build/Deploy from ${{ github.ref_name }}
-
 jobs: 
   PR_merge_Check:
     runs-on: ubuntu-latest
