@@ -16,7 +16,7 @@ run-name: Build/Deploy from ${{ github.ref_name }}
 jobs: 
   PR_merge_Check:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == 'true' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' }}
     outputs:
          Build_Deploy_PR: ${{ steps.pr_merge.outputs.Build_Deploy_PR }}
          Build_Deploy_WD: ${{ steps.Workflow_dispatch_flag.outputs.Build_Deploy_WD }}
