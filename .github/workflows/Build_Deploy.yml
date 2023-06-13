@@ -14,24 +14,31 @@ permissions:
 run-name: Build/Deploy from ${{ github.ref_name }}
 
 jobs: 
-  if_PR_merged:
+  PR_merge_Check:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
+    outputs:
+         Build_Deploy: ${{ steps.pr_merge.outputs.Build_Deploy }}
     steps:
       - uses: actions/checkout@v3 
       
       - name: PR_Check-test
+        if: github.event.pull_request.merged == 'true'
         id: pr_merge
         run: | 
+              Build_Deploy="false"
+              echo "Build_Deploy=$Build_Deploy  " >> $GITHUB_OUTPUT
               pr_checkbox=$(cat $GITHUB_EVENT_PATH | jq -r '.pull_request.body')
               if ! echo "$pr_checkbox" | grep -q "\- \[x\] Yes"; then
                 echo "Automated Build and Deploy have not been marked"
               else 
                 echo "Automated Build and Deploy have been marked"
+                Build_Deploy="true"
+                echo "Build_Deploy=$Build_Deploy" >> $GITHUB_OUTPUT
               fi
               
   Service2_Build:
-     needs: if_PR_merged
+     if: ${{ needs.PR_merge_Check.outputs.Build_Deploy == 'true' }}
      name: Mule-Build-Deploy
      uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build_Deploy.yml@main
      with:
