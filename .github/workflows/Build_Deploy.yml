@@ -9,6 +9,6 @@ permissions:
 jobs: 
   Service2_Build:
      name: Mule-Build
-     uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build.yml@main
+     uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build_Deploy.yml@main
      with:
        Repository: ${{ github.repository }}
