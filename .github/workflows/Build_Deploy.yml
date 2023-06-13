@@ -1,12 +1,32 @@
 name:  Mule_Service2_Build_Deploy
 on:
   workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches:   
+      - main
 permissions:
     contents: write
     packages: write
     actions: write
     id-token: write
 jobs: 
+  if_PR_merged:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - uses: actions/checkout@v3 
+      
+      - name: PR_Check_Status
+        id: pr_merge
+        run: | 
+              pr_checkbox=$(cat $GITHUB_EVENT_PATH | jq -r '.pull_request.body')
+              if ! echo "$pr_checkbox" | grep -q "\- \[x\] Yes"; then
+                echo "Automated Build and Deploy have not been marked"
+              else 
+                echo "Automated Build and Deploy have been marked"
+              fi
+              
   Service2_Build:
      name: Mule-Build-Deploy
      uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build_Deploy.yml@main
