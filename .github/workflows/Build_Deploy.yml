@@ -10,6 +10,9 @@ permissions:
     packages: write
     actions: write
     id-token: write
+    
+run-name: Build/Deploy from ${{ github.ref_name }}
+
 jobs: 
   if_PR_merged:
     runs-on: ubuntu-latest
@@ -28,6 +31,7 @@ jobs:
               fi
               
   Service2_Build:
+     needs: if_PR_merged
      name: Mule-Build-Deploy
      uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build_Deploy.yml@main
      with:
