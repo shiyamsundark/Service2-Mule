@@ -38,7 +38,8 @@ jobs:
                 echo "Build_Deploy_PR=$Build_Deploy_PR" >> $GITHUB_OUTPUT
               fi
       
-      - name: PR_Check-test
+
+      - name: PR_Check-WD
         if: ${{ github.event_name == 'workflow_dispatch' }}
         id: Workflow_dispatch_flag
         run: | 
@@ -47,7 +48,7 @@ jobs:
           
   Service2_Build:
      needs: PR_merge_Check
-     if: ${{ needs.PR_merge_Check.outputs.Build_Deploy_PR == 'true' && needs.PR_merge_Check.outputs.Build_Deploy_WD == 'true' }}
+     if: ${{ needs.PR_merge_Check.outputs.Build_Deploy_PR == 'true' || needs.PR_merge_Check.outputs.Build_Deploy_WD == 'true' }}
      name: Mule-Build-Deploy
      uses: shiyamsundark/DevOpsCommon-Mule/.github/workflows/Build_Deploy.yml@main
      with:
