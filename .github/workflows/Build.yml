@@ -1,6 +1,11 @@
 name:  Mule_Service2_Build
 on:
   workflow_dispatch:
+permissions:
+    contents: write
+    packages: write
+    actions: write
+    id-token: write
 jobs: 
   Service2_Build:
      name: Mule-Build
