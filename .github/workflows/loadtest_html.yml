@@ -1,0 +1,21 @@
+name: Loadtest_K6
+on: 
+  workflow_dispatch:
+jobs:
+ k6-tests:
+  name: Execute K6 Load Tests
+  runs-on: ubuntu-latest  
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Run k6 test
+      uses: grafana/k6-action@v0.2.0
+      with:
+        filename: ./K6_SimpleExample.js
+
+    - name: Upload report
+      uses: actions/upload-artifact@v3
+      with:
+        name: k6-tests-report
+        path:  ./summary.html
