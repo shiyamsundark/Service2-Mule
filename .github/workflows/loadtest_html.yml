@@ -1,4 +1,4 @@
-name: Loadtest_K6
+name: Loadtest_K6_HTML
 on: 
   workflow_dispatch:
 jobs:
