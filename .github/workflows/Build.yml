@@ -26,7 +26,8 @@ jobs:
        steps:
           - uses: actions/checkout@v2
           - name: Build with Maven
-            run: mvn versions:set -DnewVersion=${{needs.Pre-Release.outputs.currentversion}}
+            run: |
+                 mvn versions:set -DnewVersion=${{needs.Pre-Release.outputs.currentversion}}
             
   Sonar:
   
