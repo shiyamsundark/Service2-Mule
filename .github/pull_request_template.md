@@ -11,7 +11,4 @@ AB#
 - [ ] Functionality Review
 
 ## Automated Build
-- [ ] Yes
-
-## Automated Deploy
-- [ ] Yes
+- [ ] Automated Build
