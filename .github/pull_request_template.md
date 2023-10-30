@@ -10,5 +10,8 @@ AB#
 - [ ] Unit Review
 - [ ] Functionality Review
 
-## Automated Build and Deploy
+## Automated Build
+- [ ] Yes
+
+## Automated Deploy
 - [ ] Yes
